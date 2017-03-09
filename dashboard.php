@@ -1,13 +1,16 @@
 <?php include('head.php'); ?>
 <?php
-
-include('pdo.php');
+try {
+require('pdo.php');
 $db=pdo();
 
 $sql = 'select * from dishes limit 3';
 $stmt=$db->prepare($sql);
 $stmt->execute();
 $res=$stmt->fetchAll();
+}catch (PDOException $e) {
+	echo $e->getMessage();
+}
 ?>
 <h1>Top dishes</h1>
 <ul>

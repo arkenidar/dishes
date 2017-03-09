@@ -2,10 +2,14 @@
 <h1>My dishes</h1>
 Dish name: <form action="action.php"><input name=name><input type=submit name=action value=create></form>
 <?php
-include('pdo.php');
+try {
+require('pdo.php');
 $db=pdo();
 $sql='select * from dishes';
 $res=$db->query($sql);
+}catch (PDOException $e) {
+	echo $e->getMessage();
+}
 ?>
 <ul>
 <?php foreach($res as $rec) {

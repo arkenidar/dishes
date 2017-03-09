@@ -1,7 +1,7 @@
 <?php include('head.php'); ?>
 <?php
-
-include('pdo.php');
+try {
+require('pdo.php');
 $db=pdo();
 
 require('id.php');
@@ -13,6 +13,9 @@ $stmt->execute([':id'=>$id]);
 $res=$stmt->fetch();
 
 $name=htmlentities($res['name']);
+}catch (PDOException $e) {
+	echo $e->getMessage();
+}
 ?>
 <h1><?= $name ?> details</h1>
 Id: <?= $id ?>
