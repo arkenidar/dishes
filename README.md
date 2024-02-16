@@ -9,3 +9,6 @@ To install the LAMP STACK on Ubuntu:
 ------------------------------------
 https://sites.google.com/site/dariocangialosi/linuxapachemysqlphp-lamp-on-ubuntu
 
+SQLite Browser (for every dev OS)
+---------------------------------
+https://sqlitebrowser.org/
